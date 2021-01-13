@@ -121,12 +121,12 @@ function saveClick() {
         var period1 = time1.substr(-2, 2);
         var period2 = time2.substr(-2, 2);
 
-        if (num === 12) {
+        if (numeric1 === 12) {
             numeric1 = 0;
         }
 
         if (numeric2 === 12) {
-            num2 = 0;
+            numeric2 = 0;
         }
 
         if (period1 < period2) {
@@ -142,7 +142,7 @@ function saveClick() {
         }
     }
 
-    for (let i = 0; i < timeEnrty.length; index++) {
+    for (let i = 0; i < timeEnrty.length; i++) {
         if (timeEnrty[i].day == currentDate) {
             if (timeEnrty[i].time == blockHr) {
                 timeEnrty[i].text = entryNew.text;
@@ -165,7 +165,7 @@ function saveClick() {
     if (!foundEntry) {
         timeEnrty.splice(indexEntryNew, 0, entryNew);
     }
-    localStorage.setItem(timeEntryName, JSON.stringify(timeEntry));
+    localStorage.setItem(timeEntryName, JSON.stringify(timeEnrty));
 }
 
 
